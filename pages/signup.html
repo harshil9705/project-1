@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <style>
+        @import url(/css/style.css);
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <ul class="row justify-content-between montserrat">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">product</a></li>
+                    <li><a href="#">Cart</a></li>
+                    <li><a href="/pages/signup.html">Sign up</a></li>
+                    <li><a href="#">Sign in</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+   <center>
+    <form id="form">
+        <input type="text" id="name" placeholder="name"><br><br>
+        <p id="nerr"></p>
+        <input type="email" id="email" placeholder="email"><br><br>
+        <p id="eerr"></p>
+        <input type="text" id="password" placeholder="password"><br><br>
+        <p id="perr"></p>
+        <input type="submit" value="Signup">
+    </form>
+   </center>
+    <script src="/javascript/signup.js"></script>
+</body>
+</html>

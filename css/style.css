@@ -1,0 +1,68 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container{
+    max-width: 1140px;
+    margin: auto;
+}
+html{
+    scroll-behavior: smooth;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+.justify-content-between{
+    justify-content: space-between;
+}
+.justify-content-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+.text-center{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+img{
+    width: 100%;
+}
+ul,ol{
+    list-style: none;
+}
+
+/* home page */
+
+header{
+    padding: 15px;
+    background-color: #222;
+}
+
+header nav li{
+    padding: 10px 18px;
+}
+
+header nav li a{
+    transition: all 0.3s;
+    color: #1ee2e7;
+    font-size: 18px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+header nav li:hover a{
+    color: #1ee4e76b;
+}
