@@ -11,6 +11,18 @@
       "email": "harshil3322@gmail.com",
       "password": "assasa21@",
       "id": 2
+    },
+    {
+      "name": "jay pipaliya",
+      "email": "bhavinpatel23@gmail.com",
+      "password": "bhavin123@",
+      "id": 3
+    },
+    {
+      "name": "harshil",
+      "email": "jaypipaliya32@gmail.com",
+      "password": "123@abc",
+      "id": 4
     }
   ]
 }

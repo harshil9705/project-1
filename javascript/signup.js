@@ -32,13 +32,9 @@ document.querySelector("#form").addEventListener("submit",(e)=>{
       .then((res)=>res.json())
       .then((dot)=>{
         if(dot.length > 0){
-            if(dot.email == user.email){
-                alert("same")
-            }
-            else{
-                alert("fales")
-            }
-            
+            setTimeout(() => {
+                window.location.href="/index.html"
+            }, 1000);
         }
         else{
             fetch("http://localhost:7777/signup",{
@@ -49,9 +45,6 @@ document.querySelector("#form").addEventListener("submit",(e)=>{
         }
       })
     }
-
-
-
 
     // document.querySelector("#name").addEventListener("keypress",()=>{
     //     if(){
