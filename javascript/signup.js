@@ -32,8 +32,7 @@ document.querySelector("#form").addEventListener("submit",(e)=>{
       .then((res)=>res.json())
       .then((dot)=>{
         if(dot.length > 0){
-            if(dot.email == user.email ){
-                window.location.href="pages/index.html"
+            if(dot.email == user.email){
                 alert("same")
             }
             else{
