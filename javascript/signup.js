@@ -15,11 +15,9 @@ document.querySelector("#form").addEventListener("submit",(e)=>{
         document.querySelector("#nerr").innerHTML="enter name"
     }
     if(!emailregex.test(user.email)){
-        // alert("enot")
         document.querySelector("#eerr").innerHTML="enter email"
     }
     if(!passregex.test(user.password)){
-        // alert("pnot")
         document.querySelector("#perr").innerHTML="enter password"
     }
 
@@ -32,17 +30,22 @@ document.querySelector("#form").addEventListener("submit",(e)=>{
       .then((res)=>res.json())
       .then((dot)=>{
         if(dot.length > 0){
+            document.querySelector("#merr").innerHTML="Account already exists Please signin"
             setTimeout(() => {
-                window.location.href="/index.html"
-            }, 1000);
+                window.location.href="/pages/signin.html"
+            },2000);
         }
         else{
             fetch("http://localhost:7777/signup",{
-                method:"POST",
-                headers:{"content-type":"application/json"},
-                body:JSON.stringify(user)
-            })
+                    method:"POST",
+                    headers:{"content-type":"application/json"},
+                    body:JSON.stringify(user)
+                })
+                
+                document.querySelector("#merr").innerHTML="thank you"
+                    window.location.href="/index.html"
         }
+
       })
     }
 

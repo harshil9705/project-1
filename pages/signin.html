@@ -3,35 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
+    <title>Signin</title>
     <style>
+        body{
+            /* background-color:; */
+            font-family: 'Montserrat', sans-serif;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+         @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+        
+        .montserrat{
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .shadow{
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        }
         @import url(/css/style.css);
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme :{
+                container:{
+                    center:true
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-    <header>
+    <header class="p-[15px] bg-[#040b14]">
         <div class="container">
             <nav>
-                <ul class="row justify-content-between montserrat">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="#">product</a></li>
-                    <li><a href="#">Cart</a></li>
-                    <li><a href="/pages/signup.html">Sign up</a></li>
-                    <li><a href="/pages/signin.html">Sign in</a></li>
+                <ul class="flex justify-between montserrat uppercase text-[#fff] ">
+                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/index.html">Home</a></li>
+                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="#">product</a></li>
+                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="#">Cart</a></li>
+                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/pages/signup.html">Sign up</a></li>
+                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/pages/signin.html">Sign in</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-   <center>
-    <form id="form">
-        <input type="email" id="email" placeholder="email"><br><br>
-        <p id="eerr"></p>
-        <input type="text" id="password" placeholder="password"><br><br>
-        <p id="perr"></p>
-        <input type="submit" value="Sign in">
-    </form>
-   </center>
+    <div class="flex items-center justify-center h-[90vh] ">
+        <div class="bg-[#dff3fc] shadow rounded-[6px] w-[670px] py-[30px] px-[45px] ">
+            <form id="inform">
+                
+                <h2 class="text-center text-[25px] pb-[30px]">Signin Form</h2>
+                
+                <div class="text-center ">
+                    <p class="text-[14px] text-[red] text-center" id="merr"></p>
+                </div>
+
+                <label for="" class="mb-[10px] inline-block ">Your Email</label>
+                <input type="email" id="email" placeholder="Your Email" class="w-[100%] montserrat rounded-[4px] p-[10px] mb-[26px] bg-white">
+
+                <label for="" class="mb-[10px] inline-block ">Password</label>
+                <input type="text" id="password" placeholder="Your Password" class="w-[100%] montserrat rounded-[4px] p-[10px] mb-[26px] bg-white">
+
+                <div class="text-center">
+                    <input type="submit" class="text-center text-white bg-[#149ddd] py-[10px] px-[25px] rounded-[10px]" value="Sign in">
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="/javascript/signin.js"></script>
 </body>
 </html>
