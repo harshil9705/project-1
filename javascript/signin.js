@@ -1,3 +1,7 @@
+ import nav from "../components/nav.js"
+
+ document.querySelector("#nav").innerHTML=nav
+
 const signin = (e)=>{
     e.preventDefault()
 
@@ -17,7 +21,6 @@ const signin = (e)=>{
             else{
                 document.querySelector("#merr").innerHTML="Password is incorrect"
             }
-            // alert("yes")
         }
         else{
             document.querySelector("#merr").innerHTML="your account is not exist Please Sign up"
@@ -30,11 +33,3 @@ const signin = (e)=>{
 }
 
 
-document.querySelector("#inform").addEventListener("submit", signin)
-
-// let signin = (e)=>{
-//     e.preventDefault()
-//     console.log("223");
-// }
-
-// document.querySelector("#inform").addEventListener("submit",signin)

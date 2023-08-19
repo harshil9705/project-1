@@ -1,3 +1,7 @@
+import nav from "../components/nav.js";
+
+document.querySelector("#nav").innerHTML=nav
+
 document.querySelector("#form").addEventListener("submit",(e)=>{
     e.preventDefault()
     
