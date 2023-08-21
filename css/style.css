@@ -1,0 +1,57 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.shadow{
+    box-shadow:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+@import url(/css/style.css);
+
+#ui{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-top: 30px;
+}
+#ui div{
+    background-color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 15px;
+}
+#ui div img{
+    width:150px;
+    height:200px;
+    margin: auto;
+    padding: 15px;
+}
+
+
+#ui div h2{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+#ui div h4{
+    font-weight: 900;
+    margin: 5px 0px 0px;
+    font-size:18px;
+    color: #8231d3;
+}
+
+#ui div h5{
+    color: rgb(116, 116, 116);
+
+}

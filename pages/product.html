@@ -4,29 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>products</title>
-    <style>
-        body{
-            font-family: 'Montserrat', sans-serif;
-        }
-        *{
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-            outline: none;
-        }
-         @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        
-        .montserrat{
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .shadow{
-            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        }
-        @import url(/css/style.css);
-
-        
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,7 +20,18 @@
 </head>
 <body>
     <div id="nav"></div>
-    #aja
+    <section>
+        <div class="flex flex-wrap">
+            <div class="box w-[20%]  h-[90vh] " style="  border: 1px solid #e5e7eb; border-top: transparent;">
+                <h1 class="flex items-center justify-center p-[15px] text-[20px]" style="border-bottom: 1px solid #e5e7eb; width: 90%; margin: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="24" style="margin-right: 10px;" viewBox="0 0 24 24"><path d="M21 18V21H19V18H17V15H23V18H21ZM5 18V21H3V18H1V15H7V18H5ZM11 6V3H13V6H15V9H9V6H11ZM11 11H13V21H11V11ZM3 13V3H5V13H3ZM19 13V3H21V13H19Z"></path></svg></svg>Filters</h1>
+            </div>
+            <div class="w-[80%] h-[90vh] overflow-auto bg-[#f4f5f7] pt-[15px] px-[30px]">
+                <h1 class="text-[25px] decoration-2 underline decoration-solid underline-offset-8 decoration-[#8231d3]" >Products</h1>
+                <div id="ui">
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
     <script type="module" src="/javascript/product.js"></script>
 </html>

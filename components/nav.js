@@ -1,18 +1,26 @@
 const nav = () => {
   return `
-    <header class="p-[15px] bg-[#040b14]">
-        <div class="container">
-            <nav>
-                <ul class="flex justify-between montserrat uppercase text-[#fff] ">
-                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/index.html">Home</a></li>
-                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/pages/product.html">product</a></li>
-                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/pages/cart.html">Cart</a></li>
-                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/pages/signup.html">Sign up</a></li>
-                    <li class="py-[10px] px-[18px] text-[18px]"><a class="hover:text-[#149ddd] transition-all duration-300" href="/pages/signin.html">Sign in</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>`;
+  <header class="p-[15px]  w-full" style="border: 1px solid #e5e7eb ">
+  <div class="container">
+      <div class="flex justify-between items-center">
+          <nav>
+              <ul class="flex">
+                  <li class="px-[20px] p-[10px] text-[20px]"><a href="/pages/product.html">Products</a></li>
+                  <li class="px-[20px] p-[10px] text-[20px]"><a href="/pages/cart.html">Cart </a></li>
+              </ul>
+          </nav>
+  
+          <div class="logo ">
+              <a href="/index.html"><img src="/img/logo.png" width="170px" class="mt-[5px]" alt=""></a>
+          </div>
+  
+          <div class="btns">
+              <button class=" py-[10px] px-[20px] m-[5px] bg-[#8231d3] text-white rounded-[6px] font-normal"><a href="/pages/signin.html" >Sign in</a></button>
+              <button class="py-[10px] px-[20px] m-[5px] bg-[#8231d3] text-white rounded-[6px] font-normal"><a href="/pages/signup.html" >Sign up</a></button>
+          </div>
+      </div>
+  </div>
+</header>`;
 };
 
 nav();
