@@ -17,6 +17,7 @@ const signin = (e)=>{
                 window.location.href="/index.html"
             }, 2000);
             document.querySelector("#merr").innerHTML="Signin sucessfull"
+            document.querySelector("#merr").style.color="green"
             }
             else{
                 document.querySelector("#merr").innerHTML="Password is incorrect"
@@ -32,4 +33,5 @@ const signin = (e)=>{
     })
 }
 
+document.querySelector("#inform").addEventListener("submit",signin)
 
