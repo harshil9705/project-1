@@ -1,6 +1,6 @@
 const nav = () => {
   return `
-  <header class="p-[15px]  w-full" style="border: 1px solid #e5e7eb ">
+  <header class="p-[15px]  w-full bg-white" style="border: 1px solid #e5e7eb">
   <div class="container">
       <div class="flex justify-between items-center">
           <nav>

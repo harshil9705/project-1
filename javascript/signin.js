@@ -18,6 +18,7 @@ const signin = (e)=>{
             }, 2000);
             document.querySelector("#merr").innerHTML="Signin sucessfull"
             document.querySelector("#merr").style.color="green"
+            localStorage.setItem("login",true)
             }
             else{
                 document.querySelector("#merr").innerHTML="Password is incorrect"
