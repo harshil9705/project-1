@@ -27,13 +27,16 @@ let display = (data) =>{
         let plus = document.createElement("button")
         plus.innerHTML=`<i class="ri-add-fill"></i>`
         plus.addEventListener("click",()=>{
-            data[0].qty = data[0].qty+1
-            console.log(data[0]);
-            fetch(`http://localhost:7777/cart/${data[0].id}`,{
+           fetch(`http://localhost:7777/cart/${ele.id}`)
+           .then((res)=>res.json())
+           .then((data)=>{
+            data.qty = data.qty+1
+            fetch(`http://localhost:7777/cart/${data.id}`,{
                 method:"PATCH",
                 headers:{"Content-type":"application/json"},
-                body:JSON.stringify(...data)
-            })  
+                body:JSON.stringify({...data})    
+            })
+           })
         })
         let qty = document.createElement("p")
         qty.innerHTML=ele.qty
@@ -41,14 +44,24 @@ let display = (data) =>{
         let minus = document.createElement("button")
         minus.innerHTML=`<i class="ri-subtract-fill"></i>`
         minus.addEventListener("click",()=>{
-            data[0].qty = data[0].qty-1
-            console.log(data[0]);
-            fetch(`http://localhost:7777/cart/${data[0].id}`,{
-                method:"PATCH",
-                headers:{"Content-type":"application/json"},
-                body:JSON.stringify(...data)
+            fetch(`http://localhost:7777/cart/${ele.id}`)
+            .then((res)=>res.json())
+            .then((data)=>{
+                data.qty = data.qty-1
+                fetch(`http://localhost:7777/cart/${data.id}`,{
+                    method:"PATCH",
+                    headers:{"Content-type":"application/json"},
+                    body:JSON.stringify({...data})
+                })
             })  
         })
+
+        if(ele.qty == 0){
+            fetch(`http://localhost:7777/cart/${ele.id}`,{
+                method:"DELETE"
+            })
+        }
+
         let div2 = document.createElement("div")
         div2.setAttribute("class","div2")
         div2.append(minus,qty,plus)
@@ -57,7 +70,8 @@ let display = (data) =>{
         td3.append(div2)
 
         let td4 = document.createElement("td")
-        td4.innerHTML=ele.price*ele.qty
+        let proprice = ele.price*ele.qty 
+        td4.innerHTML= proprice
 
         let td5 = document.createElement("td")
         td5.innerHTML=`<i class="ri-delete-bin-line"></i>`
@@ -73,7 +87,24 @@ let display = (data) =>{
     })
 }
 
-
+let ui = (data)=>{
+    let sum = 0
+    
+    data.map((ele)=>{
+        
+        let tprice = ele.qty * ele.price
+        sum = sum + tprice
+        console.log(sum);
+        // let total = document.createElement("td")
+        
+        // document.querySelector("#tfooter").append(total)
+      
+    })
+    document.querySelector("#tfooter").innerHTML= sum;
+    
+}
+// ui()
 fetch("http://localhost:7777/cart")
 .then((res)=>res.json())
-.then((pera)=>display(pera))
+.then((pera)=>{display(pera),ui(pera)})
+

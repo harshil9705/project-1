@@ -1,5 +1,22 @@
 import nav from "../components/nav.js"
 document.querySelector("#nav").innerHTML=nav
+let fil = []
+
+fetch("http://localhost:7777/product")
+.then((rest)=>rest.json())
+.then((res)=>{
+    fil = res
+    console.log(fil);
+})
+
+document.querySelector("#value").addEventListener("keypress",(e)=>{
+    if(e.key == "Enter"){
+        let value = document.querySelector("#value").value
+        let data = fil.filter((ele)=>ele.category.match(value.toLowerCase()))
+        output(data)
+        console.log(data);
+    }
+})
 
 let output = (data)=>{
     document.querySelector("#ui").innerHTML=""

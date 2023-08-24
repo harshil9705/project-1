@@ -104,9 +104,16 @@ body{
     padding-left: 15px;
 }
 
+.cart .box tfoot td{
+    padding: 15px;
+}
+
 .cart .box tbody td .div1 .img{
     height: 80px;
     width: 80px;
+    padding: 4px;
+    border: 1px solid darkgray;
+    border-radius: 6px;
 }
 
 .cart tbody .div2{
