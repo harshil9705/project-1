@@ -22,14 +22,25 @@
     <div id="nav"></div>
     <section>
         <div class="flex flex-wrap">
-            <div class="box w-[20%]  h-[90vh] " style="  border: 1px solid #e5e7eb; border-top: transparent;">
+            <div class="box w-[25%]  h-[90vh] p-[15px]" style="  border: 1px solid #e5e7eb; border-top: transparent;">
                 <h1 class="flex items-center justify-center p-[15px] text-[20px]" style="border-bottom: 1px solid #e5e7eb; width: 90%; margin: auto;"><svg xmlns="http://www.w3.org/2000/svg" width="24" style="margin-right: 10px;" viewBox="0 0 24 24"><path d="M21 18V21H19V18H17V15H23V18H21ZM5 18V21H3V18H1V15H7V18H5ZM11 6V3H13V6H15V9H9V6H11ZM11 11H13V21H11V11ZM3 13V3H5V13H3ZM19 13V3H21V13H19Z"></path></svg></svg>Filters</h1>
-                <div>
-                    <input type="text" id="value" placeholder="search">
-                    <button id="search">search</button>
+                <div class="flex justify-center">
+                    <input type="text" id="value" class=" w-[90%] border border-[#e3e6ef] py-[10px] px-[15px] rounded-[6px] mt-[20px]" placeholder="search">
+                </div>
+                <p class="mt-[10px] ml-[15px] font-[600] text-[18px]">Price Range</p>
+                <div class="flex justify-center flex-wrap">
+                    <button id="htol" class="w-[90%] mt-[10px] py-[5px] text-white rounded-[6px] bg-[#8231d3]">High to Low</button>
+                <button id="ltoh" class="w-[90%] mt-[10px] py-[5px] text-white rounded-[6px] bg-[#8231d3]">Low to High</button>
+                </div>
+                <div class="">
+                    <p class="mt-[10px] ml-[15px] font-[600] text-[18px]">Category</p>
+                    <h5 class="my-[10px] ml-[15px] hover:text-[#8231d3] transition-all duration-500 cursor-pointer" id="man">Men's clothing</h5>
+                    <h5 class="my-[10px] ml-[15px] hover:text-[#8231d3] transition-all duration-500 cursor-pointer" id="jw">Jewelery</h5>
+                    <h5 class="my-[10px] ml-[15px] hover:text-[#8231d3] transition-all duration-500 cursor-pointer" id="ele">Electronics</h5>
+                    <h5 class="my-[10px] ml-[15px] hover:text-[#8231d3] transition-all duration-500 cursor-pointer" id="woman">Women's clothing</h5>
                 </div>
             </div>
-            <div class="w-[80%] h-[90vh] overflow-auto bg-[#f4f5f7] pt-[15px] px-[30px]">
+            <div class="w-[75%] h-[90vh] overflow-auto bg-[#f4f5f7] pt-[15px] px-[30px]">
                 <h1 class="text-[25px] decoration-2 underline decoration-solid underline-offset-8 decoration-[#8231d3]" >Products</h1>
                 <div id="ui"></div>
             </div>

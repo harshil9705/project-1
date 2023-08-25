@@ -6,18 +6,7 @@ fetch("http://localhost:7777/product")
 .then((rest)=>rest.json())
 .then((res)=>{
     fil = res
-    console.log(fil);
 })
-
-document.querySelector("#value").addEventListener("keypress",(e)=>{
-    if(e.key == "Enter"){
-        let value = document.querySelector("#value").value
-        let data = fil.filter((ele)=>ele.category.match(value.toLowerCase()))
-        output(data)
-        console.log(data);
-    }
-})
-
 let output = (data)=>{
     document.querySelector("#ui").innerHTML=""
     data.map((ele)=>{
@@ -72,7 +61,7 @@ let output = (data)=>{
         let btn2 = document.createElement("button")
         btn2.innerHTML="Buy Now"
         
-        let div2 = document.createElement("div")
+        let div2 = document.createElement("span")
         div2.append(btn1,btn2)
         div2.setAttribute("class","btns")
 
@@ -82,6 +71,41 @@ let output = (data)=>{
         document.querySelector("#ui").append(div)
     })
 }
+
+
+document.querySelector("#value").addEventListener("keypress",(e)=>{
+   
+    let value = document.querySelector("#value").value
+    let data = fil.filter((ele)=>ele.category.match(value.toLowerCase()))
+    output(data)
+    console.log(data);
+
+})
+
+let htol = ()=>{
+let data = fil.sort((a,b) => (b.price - a.price))
+output(data)
+}
+
+let ltoh = ()=>{
+let data = fil.sort((a,b) => (a.price - b.price))
+output(data)
+}
+
+
+
+document.querySelector("#htol").addEventListener("click",htol)
+document.querySelector("#ltoh").addEventListener("click",ltoh)
+
+let cate = (data) =>{
+    let info = fil.filter((ele)=>ele.category == data)
+    output(info)
+}
+
+document.querySelector("#man").addEventListener("click",()=>cate("men's clothing"))
+document.querySelector("#woman").addEventListener("click",()=>cate("women's clothing"))
+document.querySelector("#jw").addEventListener("click",()=>cate("jewelery"))
+document.querySelector("#ele").addEventListener("click",()=>cate("electronics"))
 
 fetch("http://localhost:7777/product")
 .then((rest)=>rest.json())

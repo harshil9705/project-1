@@ -3,6 +3,8 @@ import nav from '../components/nav.js'
 document.querySelector("#nav").innerHTML=nav
 
 let display = (data) =>{
+    // let sum = 0
+
     data.map((ele)=>{
 
         let tr = document.createElement("tr")
@@ -23,7 +25,6 @@ let display = (data) =>{
 
         let td2 = document.createElement("td")
         td2.innerHTML=ele.price
-        
         let plus = document.createElement("button")
         plus.innerHTML=`<i class="ri-add-fill"></i>`
         plus.addEventListener("click",()=>{
@@ -40,7 +41,6 @@ let display = (data) =>{
         })
         let qty = document.createElement("p")
         qty.innerHTML=ele.qty
-        
         let minus = document.createElement("button")
         minus.innerHTML=`<i class="ri-subtract-fill"></i>`
         minus.addEventListener("click",()=>{
@@ -55,7 +55,6 @@ let display = (data) =>{
                 })
             })  
         })
-
         if(ele.qty == 0){
             fetch(`http://localhost:7777/cart/${ele.id}`,{
                 method:"DELETE"
@@ -72,7 +71,7 @@ let display = (data) =>{
         let td4 = document.createElement("td")
         let proprice = ele.price*ele.qty 
         td4.innerHTML= proprice
-
+        // sum = sum + proprice
         let td5 = document.createElement("td")
         td5.innerHTML=`<i class="ri-delete-bin-line"></i>`
         td5.addEventListener("click",(e)=>{
@@ -89,22 +88,27 @@ let display = (data) =>{
 
 let ui = (data)=>{
     let sum = 0
-    
+    let dis = 0
     data.map((ele)=>{
         
         let tprice = ele.qty * ele.price
         sum = sum + tprice
-        console.log(sum);
-        // let total = document.createElement("td")
-        
-        // document.querySelector("#tfooter").append(total)
-      
     })
-    document.querySelector("#tfooter").innerHTML= sum;
+    document.querySelector("#code").addEventListener("click",()=>{
+        let value = document.querySelector("#coupon").value
+        if(value === "jay"){
+            dis = sum * 0.9
+        }
+        console.log(dis);
+    })
+    document.querySelector("#total").innerHTML= `<p class="font-medium text-[20px]">Total : ${sum}</p>`;
+    document.querySelector("#total2").innerHTML= `<p class="font-medium text-[20px]">Total : ${dis}</p>`;
     
+    // console.log(sum)
 }
-// ui()
+
+
 fetch("http://localhost:7777/cart")
 .then((res)=>res.json())
-.then((pera)=>{display(pera),ui(pera)})
+.then((pera)=>{display(pera), ui(pera)})
 

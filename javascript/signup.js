@@ -56,8 +56,8 @@ document.querySelector("#form").addEventListener("submit",(e)=>{
     document.querySelector("#name").addEventListener("keypress",()=>{
         document.querySelector("#nerr").innerHTML="enter name"
         
-        // if(){
+        if(!passregex.test(user.password)){
             
-        // }
+        }
     })
 })

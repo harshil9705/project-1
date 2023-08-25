@@ -16,7 +16,21 @@ body{
 .shadow{
     box-shadow:  rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
+#ui .btns {
+    
+    display: flex;
+    /* justify-content: space-between; */
+}
 
+#ui .btns button{
+    margin: 5px;
+    padding: 10px 5px;
+    background-color: #8231d3;
+    color: white;
+    border-radius: 6px;
+    width: 50%;
+    font-size: 14px;
+}
 #ui{
     display: grid;
     grid-template-columns: repeat(3,1fr);
@@ -55,21 +69,6 @@ body{
 
 }
 
-#ui .btns {
-    display: flex;
-    justify-content: space-between;
-}
-
-#ui .btns button{
-    margin: 5px;
-    padding: 10px;
-    background-color: #8231d3;
-    color: white;
-    border-radius: 6px;
-    width: 50%;
-    font-size: 14px;
-}
-
 .cart{
     padding: 20px;
 }
@@ -86,7 +85,6 @@ body{
     margin: auto;
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid;
     background-color: white;
 }
 
